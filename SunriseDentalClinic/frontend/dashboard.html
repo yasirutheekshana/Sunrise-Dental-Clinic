@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Dashboard - Sunrise Dental Clinic</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <!-- Top Navigation Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <main class="container">
+        <!-- Alert Notification Container -->
+        <div id="alert-container"></div>
+
+        <!-- Welcome Banner -->
+        <div class="welcome-hero">
+            <div>
+                <h1>Welcome, <span id="hero-staff-name">Staff</span></h1>
+                <p>Sunrise Dental Clinic Appointment &amp; Patient Management Center</p>
+            </div>
+            <div class="date-pill">
+                <span>Today's Date:</span>
+                <strong id="current-date-text">Loading...</strong>
+            </div>
+        </div>
+
+        <!-- Metrics Grid -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon today">📅</div>
+                <div class="stat-data">
+                    <span class="stat-value" id="stat-today">0</span>
+                    <span class="stat-label">Today's Appointments</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon total">📋</div>
+                <div class="stat-data">
+                    <span class="stat-value" id="stat-total">0</span>
+                    <span class="stat-label">Total Appointments</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon scheduled">⏳</div>
+                <div class="stat-data">
+                    <span class="stat-value" id="stat-scheduled">0</span>
+                    <span class="stat-label">Scheduled</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon completed">✅</div>
+                <div class="stat-data">
+                    <span class="stat-value" id="stat-completed">0</span>
+                    <span class="stat-label">Completed</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions Navigation -->
+        <div class="card">
+            <div class="card-title">Quick Actions</div>
+            <div class="quick-actions-grid">
+                <a href="new-appointment.html" class="quick-action-btn">
+                    <div class="quick-action-icon">➕</div>
+                    <span class="quick-action-title">New Appointment</span>
+                </a>
+
+                <a href="search-appointment.html" class="quick-action-btn">
+                    <div class="quick-action-icon">🔍</div>
+                    <span class="quick-action-title">Search Appointment</span>
+                </a>
+
+                <a href="appointments.html" class="quick-action-btn">
+                    <div class="quick-action-icon">📖</div>
+                    <span class="quick-action-title">Appointments</span>
+                </a>
+
+                <a href="billing.html" class="quick-action-btn">
+                    <div class="quick-action-icon">💳</div>
+                    <span class="quick-action-title">Billing</span>
+                </a>
+
+                <a href="help.html" class="quick-action-btn">
+                    <div class="quick-action-icon">❓</div>
+                    <span class="quick-action-title">Help &amp; Guide</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Today's Schedule Table -->
+        <div class="card">
+            <div class="card-title">Today's Schedule</div>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Appt No</th>
+                            <th>Patient Name</th>
+                            <th>Dentist</th>
+                            <th>Treatment</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="today-appointments-tbody">
+                        <tr>
+                            <td colspan="6" style="text-align: center; color: var(--text-muted); padding: 1.5rem;">
+                                Loading today's appointments...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Sunrise Dental Clinic, Colombo. All rights reserved.</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
