@@ -1,0 +1,28 @@
+# Compiled Java class files
+bin/
+*.class
+target/
+
+# Package Files
+*.jar
+*.war
+*.ear
+# Exception: keep libraries in backend/lib
+!backend/lib/*.jar
+
+# IDE and Editor files
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# OS generated files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Temporary files
+*.log
+*.tmp
