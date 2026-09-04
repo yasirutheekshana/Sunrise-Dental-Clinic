@@ -1,0 +1,13 @@
+[ {
+  "appointmentNumber" : "APT-2026-0001",
+  "patientName" : "Anura Bandara",
+  "address" : "No. 12, Kandy Road, Colombo",
+  "contactNumber" : "0771234567",
+  "dentistName" : "Dr. K. Perera",
+  "treatmentType" : "Dental Cleaning",
+  "appointmentDate" : "2026-10-15",
+  "appointmentTime" : "10:00",
+  "status" : "COMPLETED",
+  "createdBy" : "admin",
+  "createdAt" : "2026-09-04T19:06:12.608602800Z"
+} ]

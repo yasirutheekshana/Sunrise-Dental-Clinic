@@ -1,0 +1,12 @@
+[ {
+  "billId" : "BIL-2026-0001",
+  "appointmentNumber" : "APT-2026-0001",
+  "patientName" : "Anura Bandara",
+  "dentistName" : "Dr. K. Perera",
+  "treatmentType" : "Dental Cleaning",
+  "treatmentCost" : 4000.00,
+  "consultationFee" : 1500.00,
+  "total" : 5500.00,
+  "generatedBy" : "System Administrator",
+  "generatedAt" : "2026-09-04T19:06:12.661194500Z"
+} ]

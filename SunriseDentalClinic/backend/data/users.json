@@ -1,0 +1,17 @@
+[ {
+  "id" : "bb6203fc-30ee-401d-85e2-f8e6e3f0e4f3",
+  "username" : "admin",
+  "firstName" : "System",
+  "lastName" : "Administrator",
+  "staffId" : "STF001",
+  "passwordHash" : "$2a$12$2tH.q583bKlSEqJWMIYyRuIdXz6bt1.h5YJN/z570x/eU7wPdZ0We",
+  "createdAt" : "2026-09-04T19:06:10.580855600Z"
+}, {
+  "id" : "8506db9c-6f9b-4516-8e4e-5f215a21d357",
+  "username" : "Yasiru",
+  "firstName" : "Yasiru",
+  "lastName" : "Theekshana",
+  "staffId" : "STF002",
+  "passwordHash" : "$2a$12$ftwo6fhXCUlxQsHlMhouIePePmcGWOVmNvxWWBquQQWCB6JyoziyC",
+  "createdAt" : "2026-09-04T19:11:22.118958700Z"
+} ]

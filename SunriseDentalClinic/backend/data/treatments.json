@@ -1,0 +1,25 @@
+[ {
+  "treatmentId" : "TRT-001",
+  "treatmentName" : "Dental Consultation",
+  "treatmentCost" : 1500.00
+}, {
+  "treatmentId" : "TRT-002",
+  "treatmentName" : "Dental Cleaning",
+  "treatmentCost" : 4000.00
+}, {
+  "treatmentId" : "TRT-003",
+  "treatmentName" : "Tooth Filling",
+  "treatmentCost" : 5000.00
+}, {
+  "treatmentId" : "TRT-004",
+  "treatmentName" : "Tooth Extraction",
+  "treatmentCost" : 6000.00
+}, {
+  "treatmentId" : "TRT-005",
+  "treatmentName" : "Root Canal Treatment",
+  "treatmentCost" : 15000.00
+}, {
+  "treatmentId" : "TRT-006",
+  "treatmentName" : "Dental X-Ray",
+  "treatmentCost" : 3000.00
+} ]
