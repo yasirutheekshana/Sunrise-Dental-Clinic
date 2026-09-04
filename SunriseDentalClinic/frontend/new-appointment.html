@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Appointment - Sunrise Dental Clinic</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main class="container">
+        <div class="page-header">
+            <div class="page-header-info">
+                <h1>Register New Appointment</h1>
+                <p>Enter patient details and schedule clinical consultation</p>
+            </div>
+            <div>
+                <a href="appointments.html" class="btn btn-secondary">View All Appointments</a>
+            </div>
+        </div>
+
+        <div id="alert-container"></div>
+
+        <div class="card" style="max-width: 800px; margin: 0 auto;">
+            <form id="new-appointment-form" novalidate>
+                <!-- Automatic Appointment Number Display -->
+                <div class="form-group" style="background-color: #f8fafc; padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color); margin-bottom: 1.5rem;">
+                    <label for="appointmentNumberPreview">
+                        <strong>Generated Appointment Number (System Assigned):</strong>
+                    </label>
+                    <input type="text" id="appointmentNumberPreview" class="form-control" readonly value="Generating..." style="font-weight: 700; color: var(--primary-color); font-size: 1.1rem;">
+                    <p class="form-help">Appointment numbers are generated sequentially and cannot be entered manually.</p>
+                </div>
+
+                <h3 style="margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                    1. Patient Details
+                </h3>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="patientName">Patient Full Name <span class="required">*</span></label>
+                        <input type="text" id="patientName" class="form-control" placeholder="e.g. John Perera" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactNumber">Contact Number <span class="required">*</span></label>
+                        <input type="tel" id="contactNumber" class="form-control" placeholder="e.g. 0771234567 or +94771234567" required>
+                        <p class="form-help">Valid Sri Lankan phone number</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address <span class="required">*</span></label>
+                    <input type="text" id="address" class="form-control" placeholder="e.g. No. 45, Galle Road, Colombo 03" required>
+                </div>
+
+                <h3 style="margin-top: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem;">
+                    2. Appointment Details
+                </h3>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="dentistName">Dentist <span class="required">*</span></label>
+                        <select id="dentistName" class="form-control" required>
+                            <option value="">-- Select Dentist --</option>
+                            <option value="Dr. K. Perera">Dr. K. Perera (Senior Dental Surgeon)</option>
+                            <option value="Dr. S. Silva">Dr. S. Silva (Orthodontist)</option>
+                            <option value="Dr. N. Wickramasinghe">Dr. N. Wickramasinghe (Pediatric Dentist)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="treatmentType">Treatment Type <span class="required">*</span></label>
+                        <select id="treatmentType" class="form-control" required>
+                            <option value="">Loading treatments...</option>
+                        </select>
+                        <div id="treatmentCostPreview" style="font-size: 0.85rem; color: var(--primary-color); font-weight: 600; margin-top: 0.35rem;"></div>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="appointmentDate">Appointment Date <span class="required">*</span></label>
+                        <input type="date" id="appointmentDate" class="form-control" required>
+                        <p class="form-help">Appointments must be scheduled for today or a future date.</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appointmentTime">Appointment Time <span class="required">*</span></label>
+                        <select id="appointmentTime" class="form-control" required>
+                            <option value="">-- Select Time Slot --</option>
+                            <option value="09:00">09:00 AM</option>
+                            <option value="09:30">09:30 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="10:30">10:30 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="14:00">02:00 PM</option>
+                            <option value="14:30">02:30 PM</option>
+                            <option value="15:00">03:00 PM</option>
+                            <option value="15:30">03:30 PM</option>
+                            <option value="16:00">04:00 PM</option>
+                            <option value="16:30">04:30 PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: flex-end;">
+                    <a href="appointments.html" class="btn btn-secondary">Cancel</a>
+                    <button type="submit" id="btn-submit-appointment" class="btn btn-primary">
+                        Register Appointment
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Sunrise Dental Clinic, Colombo. All rights reserved.</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/appointments.js"></script>
+</body>
+</html>

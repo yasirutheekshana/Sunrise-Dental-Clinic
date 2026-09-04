@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Appointment - Sunrise Dental Clinic</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main class="container">
+        <div class="page-header">
+            <div class="page-header-info">
+                <h1>Search Appointment</h1>
+                <p>Lookup clinical appointment records by unique appointment number</p>
+            </div>
+            <div>
+                <a href="appointments.html" class="btn btn-secondary">All Appointments</a>
+            </div>
+        </div>
+
+        <div id="alert-container"></div>
+
+        <!-- Search Input Card -->
+        <div class="card" style="max-width: 600px; margin: 0 auto 1.5rem auto;">
+            <form id="search-form">
+                <div class="form-group">
+                    <label for="appointment-number-input">Appointment Number <span class="required">*</span></label>
+                    <div style="display: flex; gap: 0.75rem;">
+                        <input type="text" id="appointment-number-input" class="form-control" placeholder="e.g. APT-2026-0001" required>
+                        <button type="submit" id="btn-search-submit" class="btn btn-primary" style="white-space: nowrap;">
+                            SEARCH
+                        </button>
+                    </div>
+                    <p class="form-help">Enter the full formatted appointment number (e.g. APT-2026-0001).</p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Search Result Details Card (Initially Hidden) -->
+        <div class="card" id="search-result-card" style="max-width: 600px; margin: 0 auto; display: none;">
+            <div class="card-title" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+                Appointment Information
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.85rem; margin-top: 1rem; font-size: 0.95rem;">
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.4rem;">
+                    <span style="color: var(--text-muted);">Appointment Number:</span>
+                    <strong id="res-apt-number" style="color: var(--primary-color);"></strong>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.4rem;">
+                    <span style="color: var(--text-muted);">Patient Name:</span>
+                    <strong id="res-patient-name"></strong>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.4rem;">
+                    <span style="color: var(--text-muted);">Address:</span>
+                    <span id="res-address"></span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.4rem;">
+                    <span style="color: var(--text-muted);">Contact Number:</span>
+                    <span id="res-contact"></span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.4rem;">
+                    <span style="color: var(--text-muted);">Dentist:</span>
+                    <strong id="res-dentist"></strong>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.4rem;">
+                    <span style="color: var(--text-muted);">Treatment:</span>
+                    <span id="res-treatment"></span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.4rem;">
+                    <span style="color: var(--text-muted);">Appointment Date:</span>
+                    <span id="res-date"></span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed var(--border-color); padding-bottom: 0.4rem;">
+                    <span style="color: var(--text-muted);">Appointment Time:</span>
+                    <span id="res-time"></span>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; padding-top: 0.2rem;">
+                    <span style="color: var(--text-muted);">Status:</span>
+                    <span id="res-status-badge" class="badge"></span>
+                </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-color); display: flex; justify-content: flex-end; gap: 0.75rem;">
+                <a id="btn-go-billing" href="billing.html" class="btn btn-primary">
+                    Proceed to Billing &amp; Receipt
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Sunrise Dental Clinic, Colombo. All rights reserved.</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
