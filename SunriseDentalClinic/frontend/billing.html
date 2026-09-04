@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Billing &amp; Receipt - Sunrise Dental Clinic</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main class="container">
+        <div class="page-header no-print">
+            <div class="page-header-info">
+                <h1>Patient Billing &amp; Receipts</h1>
+                <p>Calculate treatment and consultation charges and issue printable receipts</p>
+            </div>
+            <div>
+                <a href="appointments.html" class="btn btn-secondary">All Appointments</a>
+            </div>
+        </div>
+
+        <div id="alert-container" class="no-print"></div>
+
+        <!-- Lookup Form -->
+        <div class="card no-print" style="max-width: 650px; margin: 0 auto 1.5rem auto;">
+            <form id="billing-search-form">
+                <div class="form-group">
+                    <label for="billing-apt-input">Enter Appointment Number <span class="required">*</span></label>
+                    <div style="display: flex; gap: 0.75rem;">
+                        <input type="text" id="billing-apt-input" class="form-control" placeholder="e.g. APT-2026-0001" required>
+                        <button type="submit" class="btn btn-primary" style="white-space: nowrap;">
+                            Lookup Bill
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <!-- Bill Calculation Preview Card -->
+        <div class="card no-print" id="billing-breakdown-card" style="max-width: 650px; margin: 0 auto 1.5rem auto; display: none;">
+            <div class="card-title" style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+                Bill Calculation Breakdown
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; font-size: 0.95rem;">
+                <div style="display: flex; justify-content: space-between;">
+                    <span style="color: var(--text-muted);">Appointment No:</span>
+                    <strong id="calc-apt-number"></strong>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span style="color: var(--text-muted);">Patient Name:</span>
+                    <span id="calc-patient-name"></span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span style="color: var(--text-muted);">Dentist:</span>
+                    <span id="calc-dentist"></span>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span style="color: var(--text-muted);">Treatment:</span>
+                    <span id="calc-treatment"></span>
+                </div>
+
+                <hr style="border: 0; border-top: 1px dashed var(--border-color); margin: 0.5rem 0;">
+
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Treatment Cost:</span>
+                    <strong id="calc-treatment-cost">Rs. 0.00</strong>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <span>Consultation Fee (Academic assumed):</span>
+                    <strong id="calc-consultation-fee">Rs. 1,500.00</strong>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; border-top: 2px solid var(--text-dark); border-bottom: 2px solid var(--text-dark); padding: 0.6rem 0; font-size: 1.15rem; font-weight: 700; color: var(--primary-color);">
+                    <span>TOTAL AMOUNT:</span>
+                    <span id="calc-total">Rs. 0.00</span>
+                </div>
+            </div>
+
+            <div style="margin-top: 1.5rem; display: flex; justify-content: flex-end;">
+                <button type="button" id="btn-generate-bill" class="btn btn-primary">
+                    Confirm &amp; Generate Bill
+                </button>
+            </div>
+        </div>
+
+        <!-- Printable Receipt Card -->
+        <div class="receipt-container" id="receipt-container" style="display: none;">
+            <div class="receipt-header">
+                <h2>SUNRISE DENTAL CLINIC</h2>
+                <p>123 Clinic Boulevard, Colombo 03, Sri Lanka</p>
+                <p>Tel: +94 11 234 5678 | Email: info@sunrisedental.lk</p>
+                <div style="font-weight: 600; font-size: 1rem; margin-top: 0.5rem; color: var(--text-dark);">
+                    PATIENT INVOICE &amp; OFFICIAL RECEIPT
+                </div>
+            </div>
+
+            <div class="receipt-meta">
+                <div>
+                    <div><strong>Bill ID:</strong> <span id="rec-bill-id"></span></div>
+                    <div><strong>Appointment No:</strong> <span id="rec-apt-number"></span></div>
+                    <div><strong>Date:</strong> <span id="rec-date"></span></div>
+                </div>
+                <div>
+                    <div><strong>Patient:</strong> <span id="rec-patient"></span></div>
+                    <div><strong>Dentist:</strong> <span id="rec-dentist"></span></div>
+                    <div><strong>Issued By:</strong> <span id="rec-staff"></span></div>
+                </div>
+            </div>
+
+            <div style="border-top: 1px dashed var(--border-color); padding-top: 0.75rem;">
+                <div class="receipt-line">
+                    <span><strong>Treatment Procedure:</strong></span>
+                    <span id="rec-treatment"></span>
+                </div>
+                <div class="receipt-line">
+                    <span>Treatment Cost:</span>
+                    <span id="rec-treatment-cost"></span>
+                </div>
+                <div class="receipt-line">
+                    <span>Clinic Consultation Fee:</span>
+                    <span id="rec-consultation-fee"></span>
+                </div>
+                <div class="receipt-line total-line">
+                    <span>TOTAL CHARGES:</span>
+                    <span id="rec-total"></span>
+                </div>
+            </div>
+
+            <div class="receipt-footer">
+                <p>Thank you for choosing Sunrise Dental Clinic.</p>
+                <p>Academic Software Engineering Demonstration - Values are assumed demo data.</p>
+            </div>
+
+            <div class="no-print" style="margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem;">
+                <button type="button" id="btn-print-bill" class="btn btn-primary">
+                    🖨️ PRINT BILL / RECEIPT
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer no-print">
+        <p>&copy; 2026 Sunrise Dental Clinic, Colombo. All rights reserved.</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/billing.js"></script>
+</body>
+</html>

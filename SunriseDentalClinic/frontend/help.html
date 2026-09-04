@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Manual &amp; Help - Sunrise Dental Clinic</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main class="container">
+        <div class="page-header">
+            <div class="page-header-info">
+                <h1>User Manual &amp; Help Center</h1>
+                <p>Standard operating procedures, system guides, and troubleshooting instructions</p>
+            </div>
+            <div>
+                <a href="dashboard.html" class="btn btn-secondary">Back to Dashboard</a>
+            </div>
+        </div>
+
+        <!-- Section 1: Workflows -->
+        <div class="card">
+            <div class="card-title">📖 Operating Procedures</div>
+
+            <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1rem;">
+                <div>
+                    <h3 style="color: var(--primary-color);">1. Staff Login</h3>
+                    <ol style="margin-left: 1.5rem; margin-top: 0.5rem; color: var(--text-dark);">
+                        <li>Enter your authorized clinic username.</li>
+                        <li>Enter your secure password.</li>
+                        <li>Click <strong>LOGIN</strong> to authenticate and enter the dashboard.</li>
+                    </ol>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--primary-color);">2. Register New Appointment</h3>
+                    <ol style="margin-left: 1.5rem; margin-top: 0.5rem; color: var(--text-dark);">
+                        <li>Open the <strong>New Appointment</strong> page from the navigation bar.</li>
+                        <li>The system automatically generates and displays the next sequential Appointment Number (e.g. <code>APT-2026-0001</code>).</li>
+                        <li>Enter patient details: Full Name, Address, and 10-digit Sri Lankan Contact Number.</li>
+                        <li>Select the consulting Dentist from the dropdown list.</li>
+                        <li>Select the required Treatment procedure (estimated cost will be displayed automatically).</li>
+                        <li>Select the Appointment Date (must be today or a future date).</li>
+                        <li>Select an available 30-minute Time slot.</li>
+                        <li>Click <strong>Register Appointment</strong>. The backend validates all inputs and checks for double-booking conflicts.</li>
+                    </ol>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--primary-color);">3. Search Appointment</h3>
+                    <ol style="margin-left: 1.5rem; margin-top: 0.5rem; color: var(--text-dark);">
+                        <li>Open the <strong>Search Appointment</strong> page.</li>
+                        <li>Enter the exact appointment number (e.g. <code>APT-2026-0001</code>).</li>
+                        <li>Click <strong>SEARCH</strong>.</li>
+                        <li>The system displays patient details, assigned dentist, treatment type, schedule, and current status.</li>
+                    </ol>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--primary-color);">4. Generate Bill &amp; Print Receipt</h3>
+                    <ol style="margin-left: 1.5rem; margin-top: 0.5rem; color: var(--text-dark);">
+                        <li>Open <strong>Billing</strong> from the top navigation, or click <em>Bill</em> next to any appointment in the Appointments table.</li>
+                        <li>Enter or confirm the Appointment Number and click <strong>Lookup Bill</strong>.</li>
+                        <li>Verify the procedure cost and academic consultation fee breakdown.</li>
+                        <li>Click <strong>Confirm &amp; Generate Bill</strong> to compute the total and save the bill permanently.</li>
+                        <li>Click <strong>PRINT BILL / RECEIPT</strong> to open the browser print dialog. Only the formatted receipt will print.</li>
+                    </ol>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--primary-color);">5. Logout</h3>
+                    <p style="margin-top: 0.5rem;">
+                        Click the <strong>Logout</strong> button in the top right corner of the navigation bar at the end of your shift. This invalidates your session on the server and protects patient data.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Error Messages Guide -->
+        <div class="card">
+            <div class="card-title">⚠️ Common Error Messages &amp; Resolutions</div>
+
+            <div class="table-responsive" style="margin-top: 1rem;">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th style="width: 35%;">Error Message</th>
+                            <th style="width: 25%;">Cause</th>
+                            <th style="width: 40%;">Resolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>Please enter your username / password</code></td>
+                            <td>Empty credentials on login.</td>
+                            <td>Provide your registered staff credentials.</td>
+                        </tr>
+                        <tr>
+                            <td><code>Invalid username or password</code></td>
+                            <td>Incorrect password or non-existent username.</td>
+                            <td>Verify spelling or register a new staff account via Sign Up.</td>
+                        </tr>
+                        <tr>
+                            <td><code>Username / Staff ID already exists</code></td>
+                            <td>Attempted to register with an existing username or Staff ID.</td>
+                            <td>Use a unique username or check with clinic administration for your assigned Staff ID.</td>
+                        </tr>
+                        <tr>
+                            <td><code>Invalid contact number</code></td>
+                            <td>Phone number does not match Sri Lankan telecom formats.</td>
+                            <td>Enter a valid 10-digit Sri Lankan phone number (e.g. 0771234567).</td>
+                        </tr>
+                        <tr>
+                            <td><code>Appointment date cannot be in the past</code></td>
+                            <td>Selected date is earlier than today's date.</td>
+                            <td>Select today or a valid future calendar date.</td>
+                        </tr>
+                        <tr>
+                            <td><code>Appointment Conflict: Dr. [...] already has an appointment at [...]</code></td>
+                            <td>The chosen dentist is already booked for that exact date and time.</td>
+                            <td>Select another available time slot or assign an alternative available dentist.</td>
+                        </tr>
+                        <tr>
+                            <td><code>No appointment found</code></td>
+                            <td>Appointment number does not exist in clinic records.</td>
+                            <td>Check the appointment number on the patient's card or search by name on the Appointments page.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 3: Academic Assumptions -->
+        <div class="card">
+            <div class="card-title">ℹ️ Academic Assumptions</div>
+            <ul style="margin-left: 1.5rem; margin-top: 0.5rem; color: var(--text-dark);">
+                <li>The system is exclusively operated by authorized clinic staff members; patients do not log in directly.</li>
+                <li>Sample treatment prices and the Rs. 1,500.00 consultation fee are assumed demonstration values for university coursework evaluation.</li>
+                <li>JSON files are used for persistent storage in place of an enterprise database to satisfy the non-framework university software engineering project brief.</li>
+                <li>Data integrity and concurrency are ensured using Java multi-threading synchronizations.</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Sunrise Dental Clinic, Colombo. All rights reserved.</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const user = await requireAuth();
+            if (user) {
+                renderNav("help");
+            }
+        });
+    </script>
+</body>
+</html>
